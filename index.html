@@ -11,25 +11,27 @@ margin:0;
 padding:30px;
 background:#111;
 color:#e0e0e0;
-font-family:Arial, sans-serif;
+font-family:'Noto Sans JP',sans-serif;
 }
 
 h1{
 color:#4a90e2;
+margin-bottom:30px;
 }
 
 article{
 background:#1a1d21;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 margin-bottom:20px;
 }
 
 .date{
 color:#8aaae5;
 font-size:0.85rem;
-margin-bottom:10px;
+margin-bottom:5px;
 }
+
 </style>
 </head>
 
@@ -37,22 +39,132 @@ margin-bottom:10px;
 
 <h1>Dorudo Blog</h1>
 
-<article>
-<div class="date">2026/03/10</div>
-<h2>ブログテスト</h2>
-<p>
-もしこれが見えていたらブログ表示成功。<br>
-HP埋め込みにも対応。
-</p>
-</article>
+<script>
 
-<article>
-<div class="date">2026/03/09</div>
-<h2>記事追加テスト</h2>
-<p>
-記事はHTMLに追加するだけでOK。
-</p>
-</article>
+/*
+
+====================================
+Dorudo Blog 記事データ
+====================================
+
+ここに記事を書いていく
+
+------------------------------------
+記事の追加方法
+------------------------------------
+
+一番下のテンプレをコピーして
+posts の中に追加する
+
+
+------------------------------------
+項目説明
+------------------------------------
+
+title
+記事タイトル
+
+date
+日付
+例
+2026/03/10
+
+public
+公開設定
+
+true  → 公開
+false → 非公開（下書き）
+
+content
+本文
+
+memo
+自分用メモ
+サイトには表示されない
+
+
+------------------------------------
+改行のやり方
+------------------------------------
+
+文章の中で
+
+\n
+
+を書くと改行される
+
+
+例
+
+content:"今日は学校。\n友達と遊んだ"
+
+
+------------------------------------
+段落改行
+------------------------------------
+
+\n\n
+
+
+------------------------------------
+記事テンプレ
+------------------------------------
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+*/
+
+
+const posts=[
+
+{
+title:"ブログ開始",
+date:"2026/03/10",
+public:true,
+content:"Dorudo Blog を開始しました。\n\nこれからアップデート情報などを書いていきます。",
+memo:"最初の記事"
+},
+
+{
+title:"下書き記事",
+date:"2026/03/09",
+public:false,
+content:"これはまだ公開しない記事。",
+memo:"完成したら公開"
+}
+
+];
+
+
+
+/* =========================
+記事表示処理
+========================= */
+
+posts
+.filter(p=>p.public)
+.sort((a,b)=> new Date(b.date)-new Date(a.date))
+.forEach(post=>{
+
+const article=document.createElement("article");
+
+article.innerHTML=`
+<div class="date">${post.date}</div>
+<h2>${post.title}</h2>
+<p>${post.content.replace(/\n/g,"<br>")}</p>
+`;
+
+document.body.appendChild(article);
+
+});
+
+</script>
 
 </body>
 </html>
