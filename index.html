@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dorudo Blog</title>
@@ -31,7 +34,6 @@ color:#8aaae5;
 font-size:0.85rem;
 margin-bottom:5px;
 }
-
 </style>
 </head>
 
@@ -42,84 +44,15 @@ margin-bottom:5px;
 <script>
 
 /*
+=============================
+ブログ記事を書く場所
+=============================
 
-====================================
-Dorudo Blog 記事データ
-====================================
-
-ここに記事を書いていく
-
-------------------------------------
-記事の追加方法
-------------------------------------
-
-一番下のテンプレをコピーして
-posts の中に追加する
-
-
-------------------------------------
-項目説明
-------------------------------------
-
-title
-記事タイトル
-
-date
-日付
-例
-2026/03/10
-
-public
-公開設定
-
-true  → 公開
-false → 非公開（下書き）
-
-content
-本文
-
-memo
-自分用メモ
-サイトには表示されない
-
-
-------------------------------------
-改行のやり方
-------------------------------------
-
-文章の中で
-
-\n
-
-を書くと改行される
-
-
-例
-
-content:"今日は学校。\n友達と遊んだ"
-
-
-------------------------------------
-段落改行
-------------------------------------
-
-\n\n
-
-
-------------------------------------
-記事テンプレ
-------------------------------------
-
-{
-title:"タイトル",
-date:"2026/00/00",
-public:true,
-content:"本文\n改行できる",
-memo:"メモ"
-},
-
+・記事は { } で囲む
+・記事の後ろに , を付ける
+・改行は \n
+・公開しないときは public:false
 */
-
 
 const posts=[
 
@@ -137,41 +70,97 @@ date:"2026/03/09",
 public:true,
 content:"なにぬです。ブログの運用を開始いたします。",
 memo:"こんな感じで書く"
+},
+
+/* =====================
+ここから書き込みテンプレ
+===================== */
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
+},
+
+{
+title:"タイトル",
+date:"2026/00/00",
+public:true,
+content:"本文\n改行できる",
+memo:"メモ"
 }
-
-{
-title:"タイトル",
-date:"2026/00/00",
-public:true,
-content:"本文\n改行できる",
-memo:"メモ"
-},
-
-
-{
-title:"タイトル",
-date:"2026/00/00",
-public:true,
-content:"本文\n改行できる",
-memo:"メモ"
-},
-
-
-{
-title:"タイトル",
-date:"2026/00/00",
-public:true,
-content:"本文\n改行できる",
-memo:"メモ"
-},
-
 
 ];
 
 
-
 /* =========================
-記事表示処理
+記事表示
 ========================= */
 
 posts
